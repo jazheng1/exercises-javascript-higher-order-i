@@ -23,7 +23,7 @@ function count(collection, predicate) {
 }
 
 function isEven(number) {
-return number % 2;
+return number % 2 === 0;
 }
 
 function isOdd(num) {
