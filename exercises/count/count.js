@@ -22,11 +22,21 @@ function count(collection, predicate) {
   return total;
 }
 
+function isEven(number) {
+return number % 2;
+}
+
+function isOdd(num) {
+  return (num % 2) !== 0;
+}
+
 if (require.main === module) {
   console.log('Running sanity checks for count:');
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
+  console.log('The numbers that are even:', count([1,2,3,4,5], isEven));
+  console.log('The numbers that are odd', count([1,2,3,4,5], isOdd));
 }
 
 module.exports = count;
