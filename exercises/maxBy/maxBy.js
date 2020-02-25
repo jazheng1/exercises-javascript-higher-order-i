@@ -18,11 +18,24 @@
  */
 function maxBy(collection, predicate) {
   // This is your job. :)
+  let first = predicate(collection[0]);
+  let word = collection[0];
+  for (let item of collection) {
+    if (predicate(item) > first) {
+      word = item;
+    }
+  }
+  return word;
+}
+
+function strLength(str) {
+  return str.length;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for maxBy:');
-
+  console.log(maxBy(['a', 'bb', 'ccc', 'dddd'], strLength));
+  console.log(maxBy(['aaaaa', 'bb', 'ccc', 'dddd'], strLength));
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
   // How can you be sure it's returning the FIRST thing it finds? Does it matter?
