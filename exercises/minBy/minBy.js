@@ -18,11 +18,25 @@
  */
 function minBy(collection, fn) {
   // This is your job. :)
+  let first = fn(collection[0]);
+  let word = collection[0];
+  for (let item of collection) {
+    if (fn(item) < first) {
+      first = fn(item )
+      word = item;
+    }
+  }
+  return word;
+}
+
+function strLength(str) {
+  return str.length;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for minBy:');
-
+  console.log(minBy(['a', 'bb', 'ccc', 'dddd'], strLength));
+  console.log(minBy(['aaaaa', 'bb', 'ccc', 'dddd'], strLength));
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
   // How can you be sure it's returning the FIRST thing it finds? Does it matter?
