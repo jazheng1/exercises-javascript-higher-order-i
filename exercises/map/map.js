@@ -25,14 +25,19 @@ function map(collection, fn) {
 
   for (let item of collection) {
     // This is your job. :)
+    results.push(fn(item));
   }
 
   return results;
 }
 
+function isEven(num) {
+  return num % 2 === 0;
+}
+
 if (require.main === module) {
   console.log('Running sanity checks for map:');
-
+  console.log('isEven applied to the array', map([0, 1, 2, 3, 4, 5], isEven));
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
 }
